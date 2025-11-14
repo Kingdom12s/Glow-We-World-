@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glow We World | Dashboard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <style>
+    :root {
+      --emerald: #0D8B70;
+      --cream: #FAF9F6;
+    }
+
+    body {
+      background-color: var(--cream);
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: var(--emerald);
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      color: #fff !important;
+      font-weight: 600;
+    }
+
+    .navbar-brand img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    /* Welcome banner */
+    .welcome-banner {
+      background: linear-gradient(to right, var(--emerald), #0a6a55);
+      color: white;
+      border-radius: 12px;
+      padding: 30px;
+      margin-top: 25px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Dashboard cards */
+    .dashboard-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .dashboard-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .dashboard-card h4 {
+      color: var(--emerald);
+      margin-bottom: 10px;
+    }
+
+    .dashboard-card p {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    /* Buttons */
+    .action-btn {
+      background-color: var(--emerald);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      transition: 0.3s;
+    }
+
+    .action-btn:hover {
+      background-color: #0a6a55;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      color: #555;
+      margin-top: 50px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="images/logo.png" alt="Glow We World Logo">
+        Glow We World
+      </a>
+      <button class="btn btn-light btn-sm">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Welcome Banner -->
+    <div class="welcome-banner">
+      <h2>Welcome back, <span id="userName">User</span> 👋</h2>
+      <p>Here’s your savings overview at a glance.</p>
+    </div>
+
+    <!-- Dashboard Overview -->
+    <div class="row mt-4">
+      <div class="col-md-4 mb-3">
+        <div class="dashboard-card">
+          <h4>Total Balance</h4>
+          <p>₦<span id="totalBalance">0.00</span></p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="dashboard-card">
+          <h4>Active Package</h4>
+          <p id="activePackage">None</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="dashboard-card">
+          <h4>Contribution Progress</h4>
+          <p id="progress">0%</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap">
+      <button class="action-btn">Contribute Now</button>
+      <button class="action-btn">View Transactions</button>
+      <button class="action-btn">Withdraw Funds</button>
+      <button class="action-btn">Update Profile</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 Glow We World — <em>Light Up Every Moment</em></p>
+    </footer>
+  </div>
+
+  <script>
+    // Example mock data
+    const userData = {
+      firstName: "Sylvanus",
+      email: "sylvanus@example.com",
+      phone: "08012345678",
+      planType: "Daily Savings",
+      planOption: "₦500 per day",
+      balance: 25000,
+      progress: "45%"
+    };
+
+    // Display user info dynamically
+    document.getElementById('userName').innerText = userData.firstName;
+    document.getElementById('totalBalance').innerText = userData.balance.toLocaleString();
+    document.getElementById('activePackage').innerText = userData.planOption;
+    document.getElementById('progress').innerText = userData.progress;
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About — Glow We World</title>
+    <style>
+      :root {
+        --emerald: #028a0f;
+        --cream: #fffbe6;
+        --dark: #033b1e;
+        --muted: #5a5a5a;
+        font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        background: var(--cream);
+        color: var(--dark);
+        padding: 40px;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: #fff;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+      }
+
+      h1 {
+        color: var(--emerald);
+        font-size: 32px;
+      }
+
+      p {
+        color: var(--muted);
+        line-height: 1.6;
+        font-size: 17px;
+      }
+
+      a {
+        color: var(--emerald);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 40px;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>About Glow We World</h1>
+      <p>
+        <strong>Glow We World</strong> is a trusted local savings and contribution platform 
+        created to empower individuals and communities to achieve their financial goals 
+        easily and transparently. Our mission is to simplify daily savings, foster accountability, 
+        and encourage financial discipline through technology.
+      </p>
+      <p>
+        We make saving simple — no paperwork, no hidden charges, and complete transparency. 
+        Whether you’re saving for a short-term goal or contributing as part of a group, 
+        Glow We World helps you track your savings seamlessly.
+      </p>
+      <p>
+        🌟 <b>Why Choose Us?</b><br />
+        - 100% transparency and security<br />
+        - Easy to use on any device<br />
+        - Instant notifications and digital receipts<br />
+        - Flexible daily or group plans<br />
+        - Reliable customer support
+      </p>
+      <p>
+        Start your journey with us today and see your finances glow! ✨
+      </p>
+      <a href="index.html">← Back to Home</a>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Glow We World
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

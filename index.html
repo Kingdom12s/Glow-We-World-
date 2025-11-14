@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Glow We World — Your Daily Savings Partner</title>
+    <meta name="description" content="Glow We World helps individuals manage daily savings and contributions with transparency and ease. Save daily, grow steadily." />
+
+    <style>
+      :root {
+        --emerald: #028a0f;
+        --cream: #fffbe6;
+        --dark: #033b1e;
+        --muted: #5a5a5a;
+        --radius: 12px;
+        font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: linear-gradient(180deg, var(--cream), #fefefe);
+        color: var(--dark);
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--dark);
+      }
+
+      .logo-img {
+        width: 100px;
+        height: auto;
+        object-fit: contain;
+      }
+
+      nav a {
+        margin-left: 18px;
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      nav a:hover {
+        color: var(--emerald);
+      }
+
+      nav a.cta {
+        background: var(--emerald);
+        color: #fff;
+        padding: 10px 14px;
+        border-radius: 10px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 400px;
+        gap: 32px;
+        margin-top: 36px;
+        align-items: center;
+      }
+
+      .hero-card {
+        background: #fff;
+        padding: 28px;
+        border-radius: var(--radius);
+        box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+      }
+
+      h1 {
+        font-size: 32px;
+        margin-bottom: 10px;
+      }
+
+      p.lead {
+        color: var(--muted);
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      .features {
+        display: flex;
+        gap: 12px;
+      }
+
+      .feature {
+        background: var(--cream);
+        padding: 14px;
+        border-radius: 8px;
+        flex: 1;
+      }
+
+      .feature h4 {
+        margin: 0 0 6px 0;
+        color: var(--emerald);
+      }
+
+      footer {
+        text-align: center;
+        color: var(--muted);
+        margin-top: 40px;
+      }
+
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        nav a { display: none; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <a href="#" class="brand">
+          <img src="images/Logo.png" alt="Glow We World Logo" class="logo-img" />
+          <div>
+            <div style="font-weight:800">Glow We World</div>
+            <small style="color:var(--muted)">Light Up Every Moment</small>
+          </div>
+        </a>
+
+        <nav>
+          <a href="#features">Features</a>
+          <a href="about.html">About</a>
+          <a href="register.html" class="cta">Join Now</a>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div class="hero-card">
+          <h1>Welcome to Glow We World</h1>
+          <p class="lead">Join thousands of Nigerians simplifying daily savings and group contributions with Glow We World. Easy, secure, and paperless.</p>
+
+          <div class="features" id="features">
+            <div class="feature">
+              <h4>Smart & Secure</h4>
+              <p>Every contribution is tracked digitally with instant notifications.</p>
+            </div>
+            <div class="feature">
+              <h4>Flexible Savings</h4>
+              <p>Choose how much to save daily and your group size.</p>
+            </div>
+            <div class="feature">
+              <h4>Transparent System</h4>
+              <p>No hidden charges, just steady growth for your money.</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <h3>Get Started with Glow We World</h3>
+          <p style="color:var(--muted)">Take charge of your savings today — grow daily, live better.</p>
+          <a href="register.html">
+            <button style="width:100%; background:var(--emerald); color:#fff; border:none; padding:12px; border-radius:10px; cursor:pointer; font-weight:700;">
+              Join Now
+            </button>
+          </a>
+        </aside>
+      </section>
+
+      <footer>
+        © <span id="year"></span> Glow We World — All rights reserved.
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

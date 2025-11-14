@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login — Glow We World</title>
+
+  <style>
+    :root {
+      --emerald: #028a0f;
+      --cream: #fffbe6;
+      --dark: #033b1e;
+      --muted: #5a5a5a;
+      --radius: 12px;
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .login-card {
+      background: #fff;
+      padding: 40px;
+      border-radius: var(--radius);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo {
+      width: 80px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: var(--emerald);
+      margin-bottom: 4px;
+    }
+
+    p.tagline {
+      color: var(--dark);
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 15px;
+    }
+
+    button {
+      background: var(--emerald);
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 15px;
+      width: 100%;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+      font-size: 14px;
+      display: none;
+    }
+
+    .register-link {
+      margin-top: 20px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .register-link a {
+      color: var(--emerald);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .register-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-card">
+    <img src="images/logo.png" alt="Glow We World Logo" class="logo">
+    <h2>Welcome Back</h2>
+    <p class="tagline">Light Up Every Moment</p>
+
+    <form id="loginForm" onsubmit="return handleLogin(event)">
+      <input type="text" id="username" name="username" placeholder="Email or Phone Number" required>
+      <input type="password" id="password" name="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+      <p id="errorMsg" class="error">Invalid credentials. Please try again.</p>
+    </form>
+
+    <div class="register-link">
+      Don’t have an account? <a href="register.html">Register Now</a>
+    </div>
+  </div>
+
+  <script>
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwelbytYpqXSXFimF-OXXpT8av9qvkIRwUZoA0pB5uCeakIdWVvrN0OYL0VwIbFMHRc/exec";
+
+    async function handleLogin(event) {
+      event.preventDefault();
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const errorMsg = document.getElementById("errorMsg");
+
+      errorMsg.style.display = "none";
+
+      try {
+        const response = await fetch(SCRIPT_URL + "?action=login&username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password));
+        const result = await response.json();
+
+        if (result.status === "success") {
+          // Store user data for the dashboard
+          localStorage.setItem("glowUserData", JSON.stringify(result.data));
+          window.location.href = "dashboard.html";
+        } else {
+          errorMsg.style.display = "block";
+        }
+      } catch (error) {
+        console.error("Error logging in:", error);
+        errorMsg.textContent = "Connection error. Please try again.";
+        errorMsg.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>

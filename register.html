@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glow We World - Register</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      overflow-x: hidden;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0, 255, 150, 0.3);
+      width: 420px;
+      padding: 30px 40px;
+      backdrop-filter: blur(12px);
+      animation: fadeIn 1.2s ease-in-out;
+      overflow-y: auto;
+      max-height: 90vh;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h2 {
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #00ff99;
+    }
+    p.tagline {
+      text-align: center;
+      font-size: 14px;
+      color: #ccc;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    input, select {
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      transition: all 0.3s ease;
+      font-size: 14px;
+    }
+    input::placeholder { color: rgba(255,255,255,0.7); }
+    select {
+      background: #ffffff;
+      color: #000000;
+    }
+    select option { color: #000; background: #fff; }
+    input:focus, select:focus {
+      background: rgba(0,255,150,0.1);
+      box-shadow: 0 0 10px rgba(0,255,150,0.3);
+      color: #fff;
+    }
+    .password-wrapper {
+      position: relative;
+    }
+    .toggle-password {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #00ff99;
+      font-size: 16px;
+      user-select: none;
+    }
+    button {
+      background: #00ff99;
+      color: #000;
+      font-weight: 600;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #00cc7a;
+      transform: scale(1.03);
+    }
+    .logo {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .logo img {
+      width: 80px;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .success, .error {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .success { color: #00ff99; }
+    .error { color: #ff4d4d; }
+    .link {
+      text-align: center;
+      margin-top: 12px;
+    }
+    .link a {
+      color: #00ff99;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .link a:hover { text-decoration: underline; }
+    .ack-wrap {
+      color: rgba(255,255,255,0.9);
+      font-size: 13px;
+      line-height: 1.3;
+      background: rgba(0,0,0,0.18);
+      padding: 10px;
+      border-radius: 8px;
+      margin-top: 6px;
+    }
+    .ack-input {
+      margin-top: 8px;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+    }
+    .terms {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="images/logo.png" alt="Glow We World Logo" />
+    </div>
+    <h2>Glow We World</h2>
+    <p class="tagline">Light Up Every Moment</p>
+
+    <form id="registrationForm">
+      <input type="text" name="firstName" id="firstName" placeholder="First Name" required />
+      <input type="text" name="middleName" id="middleName" placeholder="Middle Name" />
+      <input type="text" name="lastName" id="lastName" placeholder="Last Name" required />
+      <input type="date" name="dob" id="dob" placeholder="Date of Birth" required />
+      <input type="email" name="email" id="email" placeholder="Email Address" required />
+      <input type="tel" name="phone" id="phone" placeholder="Phone Number" required />
+      <input type="tel" name="whatsapp" id="whatsapp" placeholder="WhatsApp Number" required />
+      <input type="text" name="nin" id="nin" placeholder="NIN Number" required />
+      <input type="text" name="guarantorName" id="guarantorName" placeholder="Guarantor’s Name" required />
+      <input type="tel" name="guarantorPhone" id="guarantorPhone" placeholder="Guarantor’s Phone Number" required />
+      <input type="text" name="username" id="username" placeholder="Username" required />
+
+      <div class="password-wrapper">
+        <input type="password" name="password" id="password" placeholder="Password" required />
+        <span class="toggle-password" data-target="password">👁️</span>
+      </div>
+
+      <div class="password-wrapper">
+        <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" required />
+        <span class="toggle-password" data-target="confirmPassword">👁️</span>
+      </div>
+
+      <select name="planType" id="planType" required onchange="showPlanOptions()">
+        <option value="">Select Plan Type</option>
+        <option value="daily">Daily Individual Contribution</option>
+        <option value="weekly">Weekly Ajor</option>
+        <option value="exclusive">Exclusive (3 Days)</option>
+      </select>
+
+      <div id="planOptionsContainer" style="display:none;">
+        <select name="planOption" id="planOption" required onchange="showDescription()"></select>
+      </div>
+
+      <div id="planDescription" style="color:#00ff99; font-size:13px; text-align:center;"></div>
+
+      <div class="ack-wrap">
+        <strong>Acknowledgement</strong>
+        <p>
+          By submitting this registration form I confirm that the information I have provided is true and accurate.
+          I authorize Glow We World to process my savings contributions and to contact me using the details provided.
+          I understand and agree to abide by the platform's terms, policies and procedures.
+        </p>
+        <input class="ack-input" type="text" name="ackName" id="ackName" readonly />
+      </div>
+
+      <div class="terms">
+        <input type="checkbox" id="terms" required />
+        <label for="terms">I agree to the <a href="terms.html" target="_blank" style="color:#00ff99;">Terms and Conditions</a></label>
+      </div>
+
+      <button type="submit">Register Now</button>
+    </form>
+
+    <div class="success" id="successMsg"></div>
+    <div class="error" id="errorMsg"></div>
+    <div class="link">Already have an account? <a href="login.html">Login</a></div>
+  </div>
+
+  <script>
+    const planOptions = {
+      daily: [
+        { value: "200", text: "₦200 Daily", desc: "Save ₦200 daily to earn ₦6,000 monthly." },
+        { value: "500", text: "₦500 Daily", desc: "Save ₦500 daily to earn ₦15,000 monthly." },
+        { value: "1000", text: "₦1,000 Daily", desc: "Save ₦1,000 daily to earn ₦30,000 monthly." }
+      ],
+      weekly: [
+        { value: "250", text: "₦250 Weekly (Pack ₦5,000)", desc: "Contribute ₦250 weekly to pack ₦5,000." },
+        { value: "700", text: "₦700 Weekly (Pack ₦15,000)", desc: "Contribute ₦700 weekly to pack ₦15,000." },
+        { value: "1100", text: "₦1,100 Weekly (Pack ₦20,000)", desc: "Contribute ₦1,100 weekly to pack ₦20,000." },
+        { value: "6000", text: "₦6,000 Weekly (Pack ₦25,000)", desc: "Contribute ₦6,000 weekly to pack ₦25,000." }
+      ],
+      exclusive: [
+        { value: "1000", text: "₦1,000 (Pack ₦16,000)", desc: "Save ₦1,000 for 3 days to pack ₦16,000." },
+        { value: "500", text: "₦500 (Pack ₦7,000)", desc: "Save ₦500 for 3 days to pack ₦7,000." },
+        { value: "200", text: "₦200 (Pack ₦5,000)", desc: "Save ₦200 for 3 days to pack ₦5,000." }
+      ]
+    };
+
+    function showPlanOptions() {
+      const type = document.getElementById('planType').value;
+      const container = document.getElementById('planOptionsContainer');
+      const dropdown = document.getElementById('planOption');
+      const descBox = document.getElementById('planDescription');
+      dropdown.innerHTML = "";
+      descBox.textContent = "";
+
+      if (type && planOptions[type]) {
+        container.style.display = "block";
+        planOptions[type].forEach(plan => {
+          const opt = document.createElement('option');
+          opt.value = plan.value;
+          opt.textContent = plan.text;
+          dropdown.appendChild(opt);
+        });
+      } else {
+        container.style.display = "none";
+      }
+    }
+
+    function showDescription() {
+      const type = document.getElementById('planType').value;
+      const value = document.getElementById('planOption').value;
+      const descBox = document.getElementById('planDescription');
+      const plan = planOptions[type]?.find(p => p.value === value);
+      descBox.textContent = plan ? plan.desc : "";
+    }
+
+    document.querySelectorAll('.toggle-password').forEach(el => {
+      el.addEventListener('click', () => {
+        const input = document.getElementById(el.dataset.target);
+        if (input.type === 'password') {
+          input.type = 'text';
+          el.textContent = '🙈';
+        } else {
+          input.type = 'password';
+          el.textContent = '👁️';
+        }
+      });
+    });
+
+    // Auto-fill acknowledgement name
+    const fields = ['firstName', 'middleName', 'lastName'];
+    fields.forEach(id => {
+      document.getElementById(id).addEventListener('input', () => {
+        const first = document.getElementById('firstName').value.trim();
+        const middle = document.getElementById('middleName').value.trim();
+        const last = document.getElementById('lastName').value.trim();
+        document.getElementById('ackName').value = [first, middle, last].filter(Boolean).join(' ');
+      });
+    });
+
+    const form = document.getElementById('registrationForm');
+    const successMsg = document.getElementById('successMsg');
+    const errorMsg = document.getElementById('errorMsg');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      successMsg.textContent = '';
+      errorMsg.textContent = '';
+
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+
+      if (!passwordPattern.test(password)) {
+        errorMsg.textContent = '⚠️ Password must contain letters and numbers (min 6 characters).';
+        return;
+      }
+      if (password !== confirmPassword) {
+        errorMsg.textContent = '⚠️ Passwords do not match.';
+        return;
+      }
+
+      if (!document.getElementById('terms').checked) {
+        errorMsg.textContent = '⚠️ Please agree to the Terms and Conditions.';
+        return;
+      }
+
+      const payload = Object.fromEntries(new FormData(form));
+      payload.action = 'register';
+
+      try {
+        const resp = await fetch("https://script.google.com/macros/s/AKfycbwgtfmBqdzliC62I54qaM0m1JVqvmQNJnnRzRaBN3BDfFvNVbFpIGoPZQtwKDl6z_Mj/exec", {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await resp.json();
+        if (result && (result.success || result.status === 'success')) {
+          successMsg.textContent = '🎉 Registration successful!';
+          form.reset();
+          setTimeout(() => window.location.href = 'login.html', 1400);
+        } else {
+          errorMsg.textContent = '⚠️ ' + (result.message || 'Submission failed. Please try again.');
+        }
+      } catch (err) {
+        console.error(err);
+        errorMsg.textContent = '❌ Could not connect to server. Check network or script.';
+      }
+    });
+  </script>
+</body>
+</html>

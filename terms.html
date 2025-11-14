@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glow We World – Terms & Conditions</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0, 255, 150, 0.3);
+      width: 90%;
+      max-width: 800px;
+      padding: 30px 40px;
+      backdrop-filter: blur(12px);
+      overflow-y: auto;
+      animation: fadeIn 1.2s ease-in-out;
+      line-height: 1.6;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      text-align: center;
+      color: #00ff99;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #00ff99;
+      margin-top: 20px;
+    }
+
+    p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.9);
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+
+    ul li {
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .tagline {
+      text-align: center;
+      color: #ccc;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 13px;
+      color: #aaa;
+    }
+
+    .back-btn {
+      display: block;
+      margin: 20px auto 0;
+      background: #00ff99;
+      color: #000;
+      font-weight: 600;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+      text-align: center;
+      width: fit-content;
+    }
+
+    .back-btn:hover {
+      background: #00cc7a;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Glow We World</h1>
+    <p class="tagline">Light Up Every Moment</p>
+
+    <h2>Introduction</h2>
+    <p>
+      Welcome to Glow We World — a transparent and paperless savings and contribution platform designed to help you save, contribute, and achieve your financial goals with ease and trust. 
+      By registering or using our services, you agree to abide by the following terms and conditions.
+    </p>
+
+    <h2>1. Use of Service</h2>
+    <ul>
+      <li>All users must be at least 18 years old to register.</li>
+      <li>Users are expected to provide accurate and verifiable information during registration.</li>
+      <li>Each account is personal and must not be shared or transferred to another individual.</li>
+    </ul>
+
+    <h2>2. Registration & Account Security</h2>
+    <ul>
+      <li>Upon registration, you are responsible for safeguarding your username and password.</li>
+      <li>Glow We World will never request your password or confidential PIN via phone, SMS, or email.</li>
+      <li>Users are encouraged to create strong passwords containing both letters and numbers.</li>
+    </ul>
+
+    <h2>3. Contribution & Payment Terms</h2>
+    <ul>
+      <li>All savings and contributions are made according to the selected plan type (Daily, Weekly, or Exclusive).</li>
+      <li>Payments must be made promptly through the approved channels to maintain eligibility for returns.</li>
+      <li>Glow We World reserves the right to adjust package details with proper notice to all members.</li>
+    </ul>
+
+    <h2>4. Missed Payments & Penalties</h2>
+    <ul>
+      <li>Failure to make contributions as scheduled may result in forfeiture of accrued benefits for that cycle.</li>
+      <li>Repeated defaults may lead to temporary suspension from ongoing plans.</li>
+    </ul>
+
+    <h2>5. Data Privacy & Communication</h2>
+    <ul>
+      <li>Your personal information is securely stored and used only for operational and communication purposes.</li>
+      <li>By registering, you agree to receive updates and notifications regarding your account and platform activities.</li>
+      <li>Glow We World will never sell or share your data with unauthorized third parties.</li>
+    </ul>
+
+    <h2>6. Modifications</h2>
+    <p>
+      Glow We World reserves the right to modify or update these terms at any time. Updated terms will be communicated via official channels and reflected on our website.
+    </p>
+
+    <h2>7. Contact & Support</h2>
+    <p>
+      For inquiries, assistance, or complaints, please reach out to our support team:
+    </p>
+    <ul>
+      <li><strong>Phone:</strong> +234 817 429 1682</li>
+      <li><strong>Email:</strong> tommygloryfriday16@gmail.com</li>
+    </ul>
+
+    <p style="text-align:center; margin-top:20px; color:#00ff99;">
+      By continuing registration, you acknowledge that you have read and agreed to these Terms and Conditions.
+    </p>
+
+    <a href="register.html" class="back-btn">← Back to Registration</a>
+
+    <div class="footer">
+      &copy; <span id="year"></span> Glow We World. All Rights Reserved.
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
